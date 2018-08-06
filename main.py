@@ -1,5 +1,5 @@
 from tkinter import *
-from guelbang.members import *
+from members import *
 
 class Welcome():
 
