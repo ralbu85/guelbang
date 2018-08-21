@@ -3,51 +3,50 @@ from tkinter import ttk
 import sqlite3 as sq
 import datetime
 
-class Wages():
+class Members():
 
     def __init__(self, master):
 
+        #############################
+        ####### Master  #############
+        #############################
         self.member_master=master
-        self.member_master.geometry('800x600+100+200')
-        self.member_master.title('회원관리')
+        style = ttk.Style()
+        style.configure("Treeview.Heading", font=(None, 10))
 
-        self.frame = LabelFrame(self.member_master, text='Add new records')
-        self.frame.grid(row=0, column=1)
+        #############################
+        ####### Main Frame ##########
+        #############################
+        self.mainFrame = Frame(self.member_master)
+        self.mainFrame.grid(row=0, column=0, padx=3)
 
-        # Label(frame, text='이 름:').grid(row=1, column=1)
-        # self.name=Entry(frame)
-        # self.name.grid(row=1, column=2)
-        #
-        # Label(frame, text='핸드폰:').grid(row=2, column=1)
-        # self.mobile=Entry(frame)
-        # self.mobile.grid(row=2, column=2)
-        #
-        # Label(frame, text='주소:').grid(row=3, column=1)
-        # self.address=Entry(frame)
-        # self.address.grid(row=3, column=2)
-        #
-        # Button(frame, text='회원 추가', command=self.add_members).grid(row=4, column=2)
-        self.message=Label(self.frame, text='', fg='red')
-        self.message.grid(row=4, column=0)
+        # message
+        self.message=Label(self.mainFrame, text='', fg='red')
+        self.message.grid(row=0, column=0, pady=10)
 
-        self.message=Label(self.frame, text='', fg='red')
-        self.message.grid(row=4, column=0)
-
-        self.tree = ttk.Treeview(self.frame, height=10, column=('no','name', 'mobile', 'address'), show='headings')
-        self.tree.grid(row=5, column=0, columnspan=3)
+        # treeview
+        self.tree = ttk.Treeview(self.mainFrame, height=15, column=('no','name', 'mobile', 'address'), show='headings')
+        self.tree.grid(row=1, column=0, pady=10)
         self.tree.heading('#1', text='번호')
         self.tree.heading('#2', text='이름')
         self.tree.heading('#3', text='핸드폰')
         self.tree.heading('#4', text='주소')
 
-        self.tree.column('no',width=30)
-        self.tree.column('name',width=100)
+        self.tree.column('no',width=40)
+        self.tree.column('name',width=80)
+        self.tree.column('mobile', width=120)
+        self.tree.column('address', width=250)
         self.printMembers()
 
-        Button(self.frame, text='추가', command=self.addMembers).grid(row=6, column=0)
-        Button(self.frame, text='삭제',command=self.delete_members).grid(row=6, column=1)
-        Button(self.frame, text='수정',command=self.editing_members).grid(row=6, column=2)
+        #############################
+        ####### Menu Frame ##########
+        #############################
+        self.menuFrame=Frame(self.member_master)
+        self.menuFrame.grid(row=0,column=1, padx=3, pady=40, sticky=N)
 
+        Button(self.menuFrame, text='회원추가',command=self.addMembers, width=10).grid(row=2, padx=3, pady=10)
+        Button(self.menuFrame, text='회원삭제',command=self.delete_members, width=10).grid(row=3, padx=3, pady=10)
+        Button(self.menuFrame, text='회원정보수정',command=self.editing_members, width=10).grid(row=4, padx=3, pady=10)
 
 
     def printMembers(self):
@@ -66,6 +65,7 @@ class Wages():
     def addMembers(self):
 
         self.add_window = Toplevel()
+        self.add_window.geometry('400x400+800+500')
         Label(self.add_window, text='이 름:').grid(row=1, column=1)
         self.name=Entry(self.add_window)
         self.name.grid(row=1, column=2)
@@ -181,7 +181,7 @@ class Wages():
 def main():
 
     root=Tk()
-    myGUIWelcome=Wages(root)
+    myGUIWelcome=Members(root)
     root.mainloop()
 
 if __name__ == '__main__':
