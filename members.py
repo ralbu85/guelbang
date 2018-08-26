@@ -11,6 +11,7 @@ class Members():
         ####### Master  #############
         #############################
         self.member_master=master
+        self.member_master_states=self.member_master.winfo_exists()
         style = ttk.Style()
         style.configure("Treeview.Heading", font=(None, 10))
 
@@ -61,10 +62,23 @@ class Members():
 
         c.close()
 
+    def disable_button(self):
+        for child in self.menuFrame.winfo_children():
+            child.configure(state='disabled')
+
+    def destroy_add_members(self):
+        print ("activated")
+        for child in self.menuFrame.winfo_children():
+            child.configure(state='normal')
+        self.add_window.destroy()
+
 
     def addMembers(self):
 
-        self.add_window = Toplevel()
+        self.disable_button()
+        self.add_window = Toplevel(self.member_master)
+        self.add_window.protocol('WM_DELETE_WINDOW', self.destroy_add_members)
+
         self.add_window.geometry('400x400+800+500')
         Label(self.add_window, text='이 름:').grid(row=1, column=1)
         self.name=Entry(self.add_window)
@@ -79,6 +93,10 @@ class Members():
         self.address.grid(row=3, column=2)
 
         Button(self.add_window, text='회원 추가', command=self.add_db).grid(row=4, column=2)
+
+
+
+
 
     def add_db(self):
 
@@ -147,7 +165,7 @@ class Members():
         selected_mobile=selected_row[2]
         selected_address=selected_row[3]
 
-        self.edit_window=Toplevel()
+        self.edit_window=Toplevel(self.member_master)
         Label(self.edit_window, text='이름: ').grid(row=0, column=1)
         self.new_name=Entry(self.edit_window,textvariable=StringVar(self.edit_window, value=selected_name), width=20)
         self.new_name.grid(row=0, column=2, sticky=W)

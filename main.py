@@ -34,12 +34,15 @@ class Welcome():
 
     def gotoMembers(self):
         self.function_pannel.grid_forget()
+        self.function_pannel.destroy()
         self.function_pannel=Frame(self.master, width=100, height=100)
         self.function_pannel.grid(row=0, column=1, sticky=N, padx=3, pady=30)
         myGUI=members.Members(self.function_pannel)
 
+
     def gotoBooks(self):
         self.function_pannel.grid_forget()
+        self.function_pannel.destroy()
         self.function_pannel = Frame(self.master, width=100, height=100)
         self.function_pannel.grid(row=0, column=1, sticky=N, padx=3, pady=30)
         myGUI=books.Books(self.function_pannel)

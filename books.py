@@ -62,6 +62,7 @@ class Books():
 
 
     def print_books(self):
+        self.tree.delete(*self.tree.get_children())
         con = sq.connect('guelbang.db')
         c = con.cursor()
         c.execute('select * from BOOK')
@@ -100,8 +101,25 @@ class Books():
         else:
             self.message['text']='글자를 입력하세요'
 
+
+    def disable_button(self):
+        for child in self.menuFrame.winfo_children():
+            child.configure(state='disabled')
+
+    def destroy_add_books(self):
+        self.add_window.destroy()
+        print ("activated")
+        for child in self.menuFrame.winfo_children():
+            child.configure(state='normal')
+
+        self.print_books()
+
+
     def add_books(self):
-        self.add_window = Toplevel()
+        self.disable_button()
+        self.add_window = Toplevel(self.bookMaster)
+        self.add_window.protocol('WM_DELETE_WINDOW',self.destroy_add_books)
+
         self.add_window.geometry('400x400+800+500')
         Label(self.add_window, text='제목:').grid(row=1, column=1, padx=10, pady=10)
         self.add_title=Entry(self.add_window)
@@ -125,7 +143,8 @@ class Books():
         self.add_vol_f.grid(row=5, column=2)
 
         Button(self.add_window, text='도서 추가', command=self.add_db, width=10).grid(row=5, column=3, padx=10, pady=10, sticky=W)
-        return
+        #self.add_window.bind('<Destroy>', self.enable_button)
+
 
     def add_db(self):
         return
