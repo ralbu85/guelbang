@@ -11,7 +11,6 @@ class Members():
         ####### Master  #############
         #############################
         self.member_master=master
-        self.member_master_states=self.member_master.winfo_exists()
         style = ttk.Style()
         style.configure("Treeview.Heading", font=(None, 10))
 
@@ -25,18 +24,36 @@ class Members():
         self.message=Label(self.mainFrame, text='', fg='red')
         self.message.grid(row=0, column=0, pady=10)
 
-        # treeview
-        self.tree = ttk.Treeview(self.mainFrame, height=15, column=('no','name', 'mobile', 'address'), show='headings')
-        self.tree.grid(row=1, column=0, pady=10)
+        ############ Search Frame ###########
+        self.searchFrame = Frame(self.mainFrame)
+        self.searchFrame.grid(row=1, column=0, sticky=W)
+        # search bar
+        self.searchMember = Entry(self.searchFrame, width=20)
+        self.searchMember.grid(row=0, column=0, padx=10, sticky=W)
+        # button
+        Button(self.searchFrame, text='검색', command=lambda: self.search_print_books(self.searchBook.get())).grid(row=0,column=1)
+        ######################################
+
+
+        ## treeview
+        self.tree = ttk.Treeview(self.mainFrame, height=15, column=('no','name', 'mobile', 'address'), show='headings',selectmode="browse")
+        self.tree.grid(row=2, column=0, pady=10)
+
+        # scrollbar
+        ysb=ttk.Scrollbar(self.mainFrame, orient='vertical',command=self.tree.yview)
+        ysb.grid(row=2, column=1,sticky='ns', pady=10)
+        self.tree.configure(yscroll=ysb.set)
+
+
         self.tree.heading('#1', text='번호')
         self.tree.heading('#2', text='이름')
         self.tree.heading('#3', text='핸드폰')
         self.tree.heading('#4', text='주소')
 
-        self.tree.column('no',width=40)
-        self.tree.column('name',width=80)
-        self.tree.column('mobile', width=120)
-        self.tree.column('address', width=250)
+        self.tree.column('no',width=40, anchor=CENTER)
+        self.tree.column('name',width=80, anchor=CENTER)
+        self.tree.column('mobile', width=120, anchor=CENTER)
+        self.tree.column('address', width=260, anchor=CENTER)
         self.printMembers()
 
         #############################
@@ -45,7 +62,7 @@ class Members():
         self.menuFrame=Frame(self.member_master)
         self.menuFrame.grid(row=0,column=1, padx=3, pady=40, sticky=N)
 
-        Button(self.menuFrame, text='회원추가',command=self.addMembers, width=10).grid(row=2, padx=3, pady=10)
+        Button(self.menuFrame, text='회원추가',command=self.add_members, width=10).grid(row=2, padx=3, pady=10)
         Button(self.menuFrame, text='회원삭제',command=self.delete_members, width=10).grid(row=3, padx=3, pady=10)
         Button(self.menuFrame, text='회원정보수정',command=self.editing_members, width=10).grid(row=4, padx=3, pady=10)
 
@@ -57,7 +74,6 @@ class Members():
 
         rows=c.fetchall()
         for row in rows:
-            print(row)
             self.tree.insert("",END,values=row)
 
         c.close()
@@ -73,29 +89,32 @@ class Members():
         self.add_window.destroy()
 
 
-    def addMembers(self):
+    def add_members(self):
 
         self.disable_button()
         self.add_window = Toplevel(self.member_master)
+
+        ## when top level window closed, do this callback
         self.add_window.protocol('WM_DELETE_WINDOW', self.destroy_add_members)
 
-        self.add_window.geometry('400x400+800+500')
-        Label(self.add_window, text='이 름:').grid(row=1, column=1)
+        x_axis=self.member_master.winfo_x()
+        y_axis=self.member_master.winfo_y()
+
+        #self.add_window.geometry('300x300+700+400')
+        self.add_window.geometry('300x300+{}+{}'.format(x_axis+600,y_axis+400))
+        Label(self.add_window, text='이 름:').grid(row=1, column=1, padx=4, pady=10)
         self.name=Entry(self.add_window)
-        self.name.grid(row=1, column=2)
+        self.name.grid(row=1, column=2, padx=4, pady=10)
 
-        Label(self.add_window, text='핸드폰:').grid(row=2, column=1)
+        Label(self.add_window, text='핸드폰:').grid(row=2, column=1, padx=4, pady=10)
         self.mobile=Entry(self.add_window)
-        self.mobile.grid(row=2, column=2)
+        self.mobile.grid(row=2, column=2, padx=4, pady=10)
 
-        Label(self.add_window, text='주소:').grid(row=3, column=1)
+        Label(self.add_window, text='주소:').grid(row=3, column=1, padx=4, pady=10)
         self.address=Entry(self.add_window)
-        self.address.grid(row=3, column=2)
+        self.address.grid(row=3, column=2, padx=4, pady=10)
 
-        Button(self.add_window, text='회원 추가', command=self.add_db).grid(row=4, column=2)
-
-
-
+        Button(self.add_window, text='회원 추가', command=self.add_db).grid(row=4, column=2, padx=4, pady=10)
 
 
     def add_db(self):
@@ -119,6 +138,7 @@ class Members():
         self.tree.delete(*self.tree.get_children())
         self.printMembers()
         self.add_window.destroy()
+        self.destroy_add_members()
 
     def validation(self):
         return len(self.name.get())!=0 and len(self.mobile.get())!=0 and len(self.address.get())!=0
