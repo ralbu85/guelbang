@@ -13,11 +13,10 @@ class Rental():
         style.configure("Treeview.Heading", font=(None, 10))
 
         self.mainFrame=_mainFrame(self.rent_master, row=0, column=0)
-        self.menuFrame =_menuFrame(self.rent_master, row=0, column=1)
-
         self.message=_message(self.mainFrame.frame, row=1, column=0)
         self.rentFrame=_rentFrame(self.mainFrame.frame, row=2, column=0)
         self.searchFrame=_searchFrame(self.mainFrame.frame, self.message, self.rentFrame, row=0, column=0)
+        self.menuFrame =_menuFrame(self.rent_master, self.searchFrame, row=0, column=1, sticky=NS)
 
 class _mainFrame():
     def __init__(self, parent, *args, **kwargs):
@@ -130,9 +129,12 @@ class _searchFrame():
             elif len(member_row)==1:
                 self.message.update_member_info(member_row[0])
                 self.tree.clear_rent_info()
-                self.tree.update_rent_info(member_row[0][0])
+                self.selected_id=member_row[0][0]
+                self.tree.update_rent_info(self.selected_id)
+
             else:
                 self.popup=PopupMember(self.searchFrame, self.message, self.tree, member_row)
+
 
         else:
             self.message.update_status_info('글자를 입력하세요')
@@ -149,6 +151,7 @@ class _searchFrame():
 class PopupMember():
     def __init__(self, parent, message, tree, fetch_rows):
 
+        self.parent=parent
         ## popup new window
         self.win_master =Toplevel(parent)
 
@@ -190,18 +193,23 @@ class PopupMember():
         self.message.update_member_info(self.selected_row)
         self.rentFrame.clear_rent_info()
         self.rentFrame.update_rent_info(self.selected_row[0])
+        self.parent.selected_id=self.selected_row[0]
         self.win_master.destroy()
         return self.selected_row
 
 class _menuFrame():
-    def __init__(self, parent, *args, **kwargs):
+    def __init__(self, parent, searchFrame, *args, **kwargs):
 
+        # create Frame
         self.menuFrame=Frame(parent)
         self.menuFrame.grid(row=kwargs['row'],column=kwargs['column'], padx=3, pady=40, sticky=N)
 
-        Button(self.menuFrame, text='회원추가',command=self.pop_add_rent, width=10).grid(row=2, padx=3, pady=10)
-        Button(self.menuFrame, text='회원삭제',command=self.return_rent, width=10).grid(row=3, padx=3, pady=10)
-        Button(self.menuFrame, text='회원정보수정',command=self.view_history, width=10).grid(row=4, padx=3, pady=10)
+        # connected widget
+        self.searchFrame=searchFrame
+
+        Button(self.menuFrame, text='대여',command=self.pop_add_rent, width=10).grid(row=5, padx=3, pady=10)
+        Button(self.menuFrame, text='회수',command=self.return_rent, width=10).grid(row=6, padx=3, pady=10)
+        Button(self.menuFrame, text='대여기록',command=self.view_history, width=10).grid(row=7, padx=3, pady=10)
 
     def pop_add_rent(self):
         add_rent(self.menuFrame)
@@ -214,6 +222,7 @@ class _menuFrame():
 
 class add_rent():
     def __init__(self,parent,**kwargs):
+
         ## popup new window
         self.win_master = Toplevel(parent)
 
@@ -225,20 +234,23 @@ class add_rent():
         self.entryFrame = Frame(self.mainFrame)
         self.entryFrame.grid(row=0, column=0)
 
-        Label(self.entryFrame, text='도서검색: ').grid(row=0, column=0)
+        Label(self.entryFrame, text='도서검색: ').grid(row=0, column=0, pady=5)
         self.entry=Entry(self.entryFrame, width=20)
         self.entry.grid(row=0,column=1)
-        Button(self.entryFrame, text='검색', command=self.button_pressed).grid(row=0, column=2)
+        Button(self.entryFrame, text='검색', command=self.button_pressed).grid(row=0, column=2, padx=5)
+        Button(self.entryFrame, text='대여목록추가', command=self.add_pressed).grid(row=0, column=3, padx=5)
 
         # generate treeviews
-        self.tree = ttk.Treeview(self.mainFrame, height=20, column=('title','vol','genre','author'),show='headings')
+        self.tree = ttk.Treeview(self.mainFrame, height=20, column=('id','title','vol','genre','author'),show='headings')
         self.tree.grid(row=1, column=0)
 
-        self.tree.heading('#1', text='제목')
-        self.tree.heading('#2', text='권')
-        self.tree.heading('#3', text='장르')
-        self.tree.heading('#4', text='저자')
+        self.tree.heading('#1', text='Id')
+        self.tree.heading('#2', text='제목')
+        self.tree.heading('#3', text='권')
+        self.tree.heading('#4', text='장르')
+        self.tree.heading('#5', text='저자')
 
+        self.tree.column('id',width=40, anchor=CENTER)
         self.tree.column('title',width=200, anchor=CENTER)
         self.tree.column('vol',width=40, anchor=CENTER)
         self.tree.column('genre', width=80, anchor=CENTER)
@@ -252,7 +264,7 @@ class add_rent():
     def get_query_result(self):
         con=sq.connect('guelbang.db')
         c=con.cursor()
-        query='SELECT Title, Vol, Genre, Author FROM BOOK WHERE Title like ?'
+        query='SELECT Id, Title, Vol, Genre, Author FROM BOOK WHERE Title like ?'
         c.execute(query, ('%{}%'.format(self.keyword),))
         self.rows=c.fetchall()
         c.close()
@@ -264,6 +276,19 @@ class add_rent():
     def clear_rent_info(self):
         self.tree.delete(*self.tree.get_children())
 
+    def add_pressed(self):
+
+        params=[]
+        for i in self.tree.selection():
+            id=self.tree.item(i)['values']
+            print(id)
+            params.append((id,))
+
+        query='INSERT INTO BOOK VALUES ()'
+
+
+
+        return
 
 
 
