@@ -44,6 +44,8 @@ class Controller(tk.Tk):
         self.frames["MemberView"].grid(row=0, column=0, sticky="nsw")
         self.frames["RentView"].grid(row=0, column=0, sticky="nsw")
 
+        self.frames[""]
+
 
     def show_frame(self, page_name):
         '''Show a frame for the given page name'''
@@ -191,6 +193,9 @@ class RentView(tk.Frame):
         for record in self.controller.shared_data['rent']:
             values=[record[key] for key in keys]
             self.tree.insert("",tk.END, values=values)
+
+
+
 
 if __name__ == "__main__":
     app = Controller()

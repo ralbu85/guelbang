@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71fad900-58f1-4733-bb7f-56eab11b3b08" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/rental_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guelbang.db" beforeDir="false" afterPath="$PROJECT_DIR$/guelbang.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,23 +30,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="members.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/members.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1387">
-                  <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#0#21#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="books.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/books.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1135">
-                  <caret line="242" column="36" selection-start-line="242" selection-start-column="27" selection-end-line="242" selection-end-column="36" />
+                <state relative-caret-position="240">
+                  <caret line="172" column="84" lean-forward="true" selection-start-line="172" selection-start-column="42" selection-end-line="172" selection-end-column="84" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
                   </folding>
@@ -55,13 +42,33 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test2.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test2.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="189" column="25" lean-forward="true" selection-start-line="189" selection-start-column="25" selection-end-line="189" selection-end-column="25" />
+                <state relative-caret-position="451">
+                  <caret line="33" column="24" lean-forward="true" selection-end-line="201" selection-end-column="18" />
                   <folding>
                     <element signature="e#0#46#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test3.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test3.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+                  <folding>
+                    <element signature="e#0#46#0" expanded="true" />
+                    <element signature="e#254#4695#0" />
+                    <element signature="e#4442#6930#0" />
+                    <element signature="e#3299#4017#0" />
+                    <element signature="e#5911#6958#0" />
+                    <element signature="e#4053#5354#0" />
+                    <element signature="e#10226#11958#0" />
+                    <element signature="e#7711#9015#0" />
+                    <element signature="e#13202#16747#0" />
                   </folding>
                 </state>
               </provider>
@@ -71,11 +78,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="rental.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="rental.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/rental.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="36" selection-start-line="36" selection-end-line="36" />
+                <state relative-caret-position="671">
+                  <caret line="281" column="36" selection-start-line="281" selection-start-column="27" selection-end-line="281" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
                   </folding>
@@ -83,13 +90,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rental_new.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="rental_new.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/rental_new.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="795">
-                  <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="101" />
+                <state relative-caret-position="814">
+                  <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
                   <folding>
-                    <element signature="e#0#21#0" expanded="true" />
+                    <element signature="e#13#34#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -123,7 +130,15 @@
       <find>master</find>
       <find>search_members</find>
       <find>entry</find>
+      <find>popup</find>
+      <find>lambda</find>
+      <find>rent</find>
+      <find>shared_data['rent</find>
+      <find>MemberCheck</find>
+      <find>execute</find>
       <find>selection</find>
+      <find>rentdate</find>
+      <find>display</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,12 +157,12 @@
         <option value="$PROJECT_DIR$/rental_new.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/test2.py" />
+        <option value="$PROJECT_DIR$/test3.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1149" />
-    <option name="y" value="-17" />
+    <option name="x" value="-7" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -189,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test2">
+  <component name="RunManager" selected="Python.test3">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="guelbang" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,24 +236,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/members.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="rental" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="guelbang" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rental.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -298,23 +295,44 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="guelbang" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.rental" />
       <item itemvalue="Python.rental_new" />
       <item itemvalue="Python.test2" />
       <item itemvalue="Python.members" />
+      <item itemvalue="Python.test3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test3" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.members" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.rental_new" />
-        <item itemvalue="Python.rental" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -369,20 +387,27 @@
       <option name="project" value="LOCAL" />
       <updated>1535462022731</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="second trial">
+      <created>1535727027798</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1535727027798</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17218283" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49948508" visible="true" weight="0.17218283" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32967892" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32498044" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23962411" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.5005149" side_tool="true" visible="true" weight="0.17218283" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39937353" />
@@ -430,7 +455,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -489,7 +514,7 @@
         <state relative-caret-position="2812">
           <caret line="152" column="37" lean-forward="true" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="37" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#13#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -564,52 +589,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/members.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
-          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rental.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1135">
-          <caret line="242" column="36" selection-start-line="242" selection-start-column="27" selection-end-line="242" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-157">
           <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rental_new.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+          <folding>
+            <element signature="e#13#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,10 +616,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rental_new.py">
+    <entry file="file://$PROJECT_DIR$/members.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="156" column="20" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="101" />
+        <state relative-caret-position="-836">
+          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -633,10 +638,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="189" column="25" lean-forward="true" selection-start-line="189" selection-start-column="25" selection-end-line="189" selection-end-column="25" />
+        <state relative-caret-position="451">
+          <caret line="33" column="24" lean-forward="true" selection-end-line="201" selection-end-column="18" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="172" column="84" lean-forward="true" selection-start-line="172" selection-start-column="42" selection-end-line="172" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rental.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="281" column="36" selection-start-line="281" selection-start-column="27" selection-end-line="281" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#254#4695#0" />
+            <element signature="e#4442#6930#0" />
+            <element signature="e#3299#4017#0" />
+            <element signature="e#5911#6958#0" />
+            <element signature="e#4053#5354#0" />
+            <element signature="e#10226#11958#0" />
+            <element signature="e#7711#9015#0" />
+            <element signature="e#13202#16747#0" />
           </folding>
         </state>
       </provider>
